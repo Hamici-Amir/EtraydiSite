@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Download, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
     const { t, i18n } = useTranslation();
@@ -29,40 +30,53 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-3 top-4' : 'py-6 bg-transparent'}`}>
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-4 top-2' : 'py-6 bg-transparent'}`}>
             <div className={`container flex justify-between items-center transition-all duration-500 ${scrolled ? 'glass-premium py-3 px-8 rounded-full max-w-[95%] border-white/10 shadow-2xl' : ''}`}>
-                <Link to="/" className="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">E</div>
-                    <span>Etraydi</span>
+                <Link to="/" className="text-2xl font-bold font-heading tracking-tight text-white flex items-center gap-3 hover-lift">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-indigo-cyan flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                        <span className="text-white font-bold text-xl">E</span>
+                    </div>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">Etraydi</span>
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center gap-10">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            to={link.path}
-                            className={`nav-link text-xs font-semibold tracking-wide transition-all ${location.pathname === link.path ? 'text-blue-500 opacity-100' : 'text-slate-300'
-                                }`}
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
+                <div className="hidden md:flex items-center gap-8">
+                    <div className="flex items-center gap-2 glass px-2 py-1.5 rounded-full">
+                        {navLinks.map((link) => {
+                            const isActive = location.pathname === link.path;
+                            return (
+                                <Link
+                                    key={link.name}
+                                    to={link.path}
+                                    className={`relative px-4 py-2 text-sm font-medium transition-colors ${isActive ? 'text-white' : 'text-slate-400 hover:text-white'}`}
+                                >
+                                    {isActive && (
+                                        <motion.div
+                                            layoutId="nav-pill"
+                                            className="absolute inset-0 bg-white/10 rounded-full -z-10"
+                                            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                                        />
+                                    )}
+                                    <span className="relative z-10">{link.name}</span>
+                                </Link>
+                            )
+                        })}
+                    </div>
 
                     {/* Language Switcher */}
                     <button
                         onClick={toggleLanguage}
-                        className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest"
+                        className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest hover-lift"
                     >
-                        <Globe size={14} className="text-blue-500" />
+                        <Globe size={14} className="text-cyan-400" />
                         <span>{i18n.language === 'en' ? 'AR' : 'EN'}</span>
                     </button>
 
                     <Link
                         to="/download"
-                        className="flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 hover-lift text-white text-xs font-bold rounded-full transition-all shadow-lg shadow-blue-900/20"
+                        className="flex items-center gap-2 px-6 py-2.5 bg-gradient-indigo-cyan hover:opacity-90 hover-lift text-white text-sm font-bold rounded-full transition-all shadow-lg shadow-cyan-500/25"
                     >
-                        <Download size={14} />
+                        <Download size={16} />
                         <span>{t('navbar.download_app')}</span>
                     </Link>
                 </div>
@@ -75,35 +89,43 @@ const Navbar = () => {
                     >
                         {i18n.language === 'en' ? 'AR' : 'EN'}
                     </button>
-                    <button className="text-white" onClick={() => setIsOpen(!isOpen)}>
-                        {isOpen ? <X size={24} /> : <Menu size={24} />}
+                    <button className="text-white p-2 glass rounded-full" onClick={() => setIsOpen(!isOpen)}>
+                        {isOpen ? <X size={20} /> : <Menu size={20} />}
                     </button>
                 </div>
             </div>
 
             {/* Mobile Nav */}
-            {isOpen && (
-                <div className="md:hidden absolute top-full left-4 right-4 mt-2 glass p-6 animate-fade-in flex flex-col gap-4">
-                    {navLinks.map((link) => (
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                        className="md:hidden absolute top-full left-4 right-4 mt-4 glass-premium p-6 flex flex-col gap-4 origin-top"
+                    >
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.name}
+                                to={link.path}
+                                className={`text-lg font-medium border-b border-white/5 pb-3 transition-colors ${location.pathname === link.path ? 'text-cyan-400' : 'text-slate-300 hover:text-white'}`}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
                         <Link
-                            key={link.name}
-                            to={link.path}
-                            className="text-lg font-medium text-slate-300 border-b border-white/5 pb-2"
+                            to="/download"
+                            className="flex items-center justify-center gap-2 px-5 py-4 bg-gradient-indigo-cyan text-white font-bold rounded-xl mt-2 shadow-lg shadow-indigo-500/20"
                             onClick={() => setIsOpen(false)}
                         >
-                            {link.name}
+                            <Download size={18} />
+                            <span>{t('navbar.download_app')}</span>
                         </Link>
-                    ))}
-                    <Link
-                        to="/download"
-                        className="flex items-center justify-center gap-2 px-5 py-3 bg-blue-600 text-white font-semibold rounded-lg"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        <Download size={18} />
-                        <span>{t('navbar.download_app')}</span>
-                    </Link>
-                </div>
-            )}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };

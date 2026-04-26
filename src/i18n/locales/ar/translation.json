@@ -79,16 +79,21 @@
     },
     "contact": {
         "title": "تواصل معنا",
+        "subtitle_badge": "مرحباً بك",
         "description": "لديك أسئلة حول محاكي إتريدي أو تحتاج إلى دعم فني؟ نحن هنا لمساعدتك في رحلتك التعليمية المالية.",
+        "email_support": "دعم عبر البريد الإلكتروني",
+        "phone_support": "دعم عبر الهاتف",
+        "phone_number": "+1 (555) 123-4567",
+        "connect_with_us": "تواصل معنا عبر",
         "form": {
             "name": "الاسم الكامل",
             "email": "البريد الإلكتروني",
             "subject": "الموضوع",
             "message": "الرسالة",
-            "placeholder_name": "جون دو",
-            "placeholder_email": "john@example.com",
+            "placeholder_name": "أحمد محمد",
+            "placeholder_email": "ahmed@example.com",
             "placeholder_subject": "كيف يمكننا مساعدتك؟",
-            "placeholder_message": "رسالتك هنا...",
+            "placeholder_message": "اكتب رسالتك هنا...",
             "submit": "إرسال الرسالة"
         }
     },
