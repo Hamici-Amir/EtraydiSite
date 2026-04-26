@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, Info, ShieldAlert, CheckCircle2 } from 'lucide-react';
+import { Download, Info, ShieldAlert, CheckCircle2, Smartphone, AlertTriangle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const DownloadPage = () => {
     const { t } = useTranslation();
     const versionInfo = {
-        version: '1.2.4',
-        releaseDate: t('download.latest') + ': February 15, 2026',
-        fileSize: '24.5 MB',
+        version: '1.0.4',
+        releaseDate: t('download.latest') + ': April 26, 2026',
+        fileSize: '85.1 MB',
         checksum: 'a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a7b8c9d0e1f2',
         notes: [
             t('download.improved', 'Improved chart rendering performance'),
@@ -47,7 +47,7 @@ const DownloadPage = () => {
                         className="text-center mb-16"
                     >
                         <div className="badge badge-cyan mb-6">Available Now</div>
-                        <h1 className="text-5xl md:text-6xl font-bold font-heading text-white mb-6 tracking-tight">{t('download.title', 'Download Etraydi')}</h1>
+                        <h1 className="text-5xl md:text-6xl font-bold font-heading text-white mb-6 tracking-tight">{t('download.title', 'Download Educate')}</h1>
                         <p className="text-slate-400 text-lg opacity-90 max-w-2xl mx-auto font-medium">{t('download.description', 'Get the ultimate trading simulation experience on your device.')}</p>
                     </motion.div>
 
@@ -61,7 +61,7 @@ const DownloadPage = () => {
                             
                             <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
                                 <div>
-                                    <h2 className="text-3xl font-bold font-heading text-white mb-2 tracking-tight">{t('download.card_title', 'Android APK')}</h2>
+                                    <h3 className="text-3xl font-bold font-heading text-white mb-2 tracking-tight">{t('download.card_title', 'Educate for Android')}</h3>
                                     <span className="text-cyan-400 font-bold text-sm tracking-wide">{t('download.latest')}: v{versionInfo.version}</span>
                                 </div>
                                 <div className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg">{t('download.stable', 'Stable Build')}</div>
@@ -70,7 +70,7 @@ const DownloadPage = () => {
                             <div className="grid grid-cols-2 gap-6 py-6 border-y border-white/5">
                                 <div>
                                     <span className="text-xs text-slate-500 block uppercase mb-2 font-bold tracking-widest">Release Date</span>
-                                    <span className="text-white font-medium">{versionInfo.releaseDate.split(': ')[1] || 'Feb 15, 2026'}</span>
+                                    <span className="text-white font-medium">{versionInfo.releaseDate.split(': ')[1] || 'April 26, 2026'}</span>
                                 </div>
                                 <div>
                                     <span className="text-xs text-slate-500 block uppercase mb-2 font-bold tracking-widest">File Size</span>
@@ -96,13 +96,11 @@ const DownloadPage = () => {
                             <div className="mt-4 pt-6 border-t border-white/5">
                                 <a 
                                     href="/base.apk" 
-                                    download="Etraydi_App.apk"
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="w-full py-5 bg-gradient-indigo-cyan hover:scale-[1.02] text-white font-bold text-lg rounded-2xl transition-all flex items-center justify-center gap-3 shadow-xl shadow-cyan-500/20"
+                                    download="Educate_App.apk"
+                                    className="w-full py-5 bg-gradient-indigo-cyan hover:scale-[1.02] active:scale-[0.98] text-white font-bold text-lg rounded-2xl transition-all flex items-center justify-center gap-3 shadow-xl shadow-cyan-500/20"
                                 >
                                     <Download size={24} />
-                                    {t('navbar.download_app')}
+                                    <span>{t('cta.button')}</span>
                                 </a>
                                 <p className="text-[10px] text-slate-500 text-center mt-4 font-mono truncate opacity-60 px-4">
                                     SHA256: {versionInfo.checksum}
@@ -110,18 +108,20 @@ const DownloadPage = () => {
                             </div>
                         </motion.div>
 
+                        {/* Info/Requirements */}
                         <motion.div
                             variants={itemVariants}
-                            className="flex flex-col gap-8"
+                            className="flex flex-col gap-6"
                         >
-                            <div className="glass-premium p-8 border-amber-500/20 rounded-[2rem] relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 blur-[40px] rounded-full"></div>
-                                <h3 className="text-white font-bold font-heading text-lg mb-4 flex items-center gap-3 relative z-10">
-                                    <ShieldAlert size={22} className="text-amber-400" />
-                                    {t('download.important', 'Important Note')}
-                                </h3>
-                                <p className="text-sm text-slate-300 leading-relaxed font-medium relative z-10">
-                                    {t('download.important_desc', 'For your security, only download Etraydi from this official website. You may need to enable "Install from Unknown Sources" in your device settings.')}
+                            <div className="glass p-8 rounded-[2.5rem] border-white/5">
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center border border-red-500/20">
+                                        <AlertTriangle className="text-red-400" size={20} />
+                                    </div>
+                                    <h4 className="text-lg font-bold text-white uppercase tracking-wider text-sm">{t('download.important')}</h4>
+                                </div>
+                                <p className="text-sm text-slate-400 leading-relaxed font-medium">
+                                    {t('download.important_desc', 'For your security, only download Educate from this official website. You may need to enable "Install from Unknown Sources" in your device settings.')}
                                 </p>
                             </div>
 

@@ -20,11 +20,11 @@ const PrivacyPolicy = () => {
         },
         {
             title: 'Account Deletion',
-            content: 'Users can request account deletion at any time through the in-app support menu or by emailing support@etraydi.com. Upon request, all personal data will be permanently removed from our systems within 30 days.'
+            content: 'Users can request account deletion at any time through the in-app support menu or by emailing support@educate.com. Upon request, all personal data will be permanently removed from our systems within 30 days.'
         },
         {
             title: 'Contact Information',
-            content: 'If you have any questions about this Privacy Policy, please contact us at support@etraydi.com.'
+            content: 'If you have any questions about this Privacy Policy, please contact us at support@educate.com.'
         }
     ];
 

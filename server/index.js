@@ -43,12 +43,12 @@ const features = [
 // Mock data for FAQs
 const faqs = [
     {
-        q: 'Is Etraydi really free?',
+        q: 'Is Educate really free?',
         a: 'Yes, the simulation and all educational content are completely free for all users.'
     },
     {
         q: 'Can I withdraw my virtual profits?',
-        a: 'No, all funds in Etraydi are virtual and for educational purposes only.'
+        a: 'No, all funds in Educate are virtual and for educational purposes only.'
     },
     {
         q: 'How accurate is the market data?',

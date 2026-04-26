@@ -36,7 +36,7 @@ const Navbar = () => {
                     <div className="w-10 h-10 rounded-xl bg-gradient-indigo-cyan flex items-center justify-center shadow-lg shadow-indigo-500/30">
                         <span className="text-white font-bold text-xl">E</span>
                     </div>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">Etraydi</span>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">Educate</span>
                 </Link>
 
                 {/* Desktop Nav */}

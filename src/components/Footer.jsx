@@ -21,7 +21,7 @@ const Footer = () => {
                             <div className="w-8 h-8 rounded-xl bg-gradient-indigo-cyan flex items-center justify-center text-sm shadow-lg shadow-indigo-500/20">
                                 <span className="font-bold">E</span>
                             </div>
-                            <span>Etraydi</span>
+                            <span>Educate</span>
                         </Link>
                         <p className="text-sm text-slate-400 leading-relaxed">
                             {t('footer.description')}
@@ -55,8 +55,8 @@ const Footer = () => {
                     <div className="flex flex-col gap-6">
                         <h4 className="text-white font-bold font-heading text-lg">Connect</h4>
                         <div className="flex flex-col gap-4">
-                            <a href="mailto:support@etraydi.com" className="text-sm text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-3 w-fit bg-white/5 px-4 py-2 rounded-lg border border-white/5 hover:border-cyan-500/30">
-                                <Mail size={16} className="text-cyan-400" /> support@etraydi.com
+                            <a href="mailto:support@educate.com" className="text-sm text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-3 w-fit bg-white/5 px-4 py-2 rounded-lg border border-white/5 hover:border-cyan-500/30">
+                                <Mail size={16} className="text-cyan-400" /> support@educate.com
                             </a>
                             <div className="flex gap-4 mt-2">
                                 <div className="w-12 h-12 rounded-xl glass-premium flex items-center justify-center text-slate-400 hover:text-white hover-lift transition-all cursor-pointer border-white/10 shadow-lg group">
@@ -82,7 +82,7 @@ const Footer = () => {
                     
                     <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-4xl opacity-60 hover:opacity-100 transition-opacity gap-4">
                         <p className="text-sm text-slate-400 font-medium">
-                            &copy; {new Date().getFullYear()} Etraydi.
+                            &copy; {new Date().getFullYear()} Educate.
                         </p>
                         <p className="text-sm text-slate-400 font-medium">
                             {t('footer.rights')}

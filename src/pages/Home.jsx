@@ -180,7 +180,7 @@ const Home = () => {
                 </motion.div>
             </section>
 
-            {/* What is Etraydi? */}
+            {/* What is Educate? */}
             <section className="section bg-white/5 relative border-y border-white/5 backdrop-blur-sm">
                 <div className="container">
                     <motion.div
@@ -287,7 +287,7 @@ const Home = () => {
                     >
                         <motion.div variants={itemVariants} className="text-center mb-16">
                             <h2 className="text-4xl font-bold font-heading text-white mb-4">{t('faq.title')}</h2>
-                            <p className="text-slate-400 text-lg">Everything you need to know about Etraydi.</p>
+                            <p className="text-slate-400 text-lg">Everything you need to know about Educate.</p>
                         </motion.div>
                         
                         <div className="flex flex-col gap-6">

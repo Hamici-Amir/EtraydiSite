@@ -5,7 +5,7 @@ const TermsOfService = () => {
     const sections = [
         {
             title: '1. Educational Purpose Only',
-            content: 'Etraydi is a trading simulator designed strictly for educational and entertainment purposes. All assets, balances, and trading activities within the application use virtual funds and are not linked to any real-world financial systems.'
+            content: 'Educate is a trading simulator designed strictly for educational and entertainment purposes. All assets, balances, and trading activities within the application use virtual funds and are not linked to any real-world financial systems.'
         },
         {
             title: '2. No Financial Services',
@@ -13,7 +13,7 @@ const TermsOfService = () => {
         },
         {
             title: '3. No Guarantees',
-            content: 'Trading simulation results do not guarantee future performance in real markets. Financial markets are inherently risky, and Etraydi is not responsible for any real-world financial losses incurred through external trading activities.'
+            content: 'Trading simulation results do not guarantee future performance in real markets. Financial markets are inherently risky, and Educate is not responsible for any real-world financial losses incurred through external trading activities.'
         },
         {
             title: '4. User Responsibility',
@@ -21,7 +21,7 @@ const TermsOfService = () => {
         },
         {
             title: '5. Limitation of Liability',
-            content: 'Etraydi and its developers shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use the application.'
+            content: 'Educate and its developers shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use the application.'
         },
         {
             title: '6. Account Termination Rights',

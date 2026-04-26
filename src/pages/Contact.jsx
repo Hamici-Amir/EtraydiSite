@@ -82,7 +82,7 @@ const Contact = () => {
                             <motion.div 
                                 whileHover={{ scale: 1.02 }}
                                 className="flex items-start gap-6 group glass-premium p-6 rounded-3xl transition-all border-white/5 hover:border-cyan-500/30 shadow-lg shadow-black/20 relative overflow-hidden cursor-pointer"
-                                onClick={() => window.location.href = "mailto:support@etraydi.com"}
+                                onClick={() => window.location.href = "mailto:support@educate.com"}
                             >
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 blur-[40px] rounded-full group-hover:bg-cyan-500/20 transition-colors"></div>
                                 <div className="w-16 h-16 bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 rounded-2xl group-hover:scale-110 transition-transform shadow-inner">
@@ -90,7 +90,7 @@ const Contact = () => {
                                 </div>
                                 <div className="pt-3">
                                     <h4 className="text-white font-bold font-heading text-xl mb-1">{t('contact.email_support')}</h4>
-                                    <p className="text-base text-slate-400 font-medium tracking-wide">support@etraydi.com</p>
+                                    <p className="text-base text-slate-400 font-medium tracking-wide">support@educate.com</p>
                                 </div>
                             </motion.div>
 
