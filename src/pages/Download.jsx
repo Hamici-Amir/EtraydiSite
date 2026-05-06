@@ -6,10 +6,10 @@ import { useTranslation } from 'react-i18next';
 const DownloadPage = () => {
     const { t } = useTranslation();
     const versionInfo = {
-        version: '1.0.4',
-        releaseDate: t('download.latest') + ': April 26, 2026',
+        version: '1.0.5',
+        releaseDate: t('download.latest') + ': May 6, 2026',
         fileSize: '85.1 MB',
-        checksum: 'a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6a7b8c9d0e1f2',
+        checksum: 'e1eeb06f4dd62c0410a865ed553b74e26933d07c609122247929655e3331d14e',
         notes: [
             t('download.improved', 'Improved chart rendering performance'),
             t('download.bug_fixes', 'Fixed minor localization bugs'),
@@ -70,7 +70,7 @@ const DownloadPage = () => {
                             <div className="grid grid-cols-2 gap-6 py-6 border-y border-white/5">
                                 <div>
                                     <span className="text-xs text-slate-500 block uppercase mb-2 font-bold tracking-widest">Release Date</span>
-                                    <span className="text-white font-medium">{versionInfo.releaseDate.split(': ')[1] || 'April 26, 2026'}</span>
+                                    <span className="text-white font-medium">{versionInfo.releaseDate.split(': ')[1] || 'May 6, 2026'}</span>
                                 </div>
                                 <div>
                                     <span className="text-xs text-slate-500 block uppercase mb-2 font-bold tracking-widest">File Size</span>
@@ -95,8 +95,8 @@ const DownloadPage = () => {
 
                             <div className="mt-4 pt-6 border-t border-white/5">
                                 <a 
-                                    href="/base.apk" 
-                                    download="Educate_App.apk"
+                                    href="/Educate.apk" 
+                                    download="Educate.apk"
                                     className="w-full py-5 bg-gradient-indigo-cyan hover:scale-[1.02] active:scale-[0.98] text-white font-bold text-lg rounded-2xl transition-all flex items-center justify-center gap-3 shadow-xl shadow-cyan-500/20"
                                 >
                                     <Download size={24} />
